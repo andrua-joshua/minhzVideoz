@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.HBox?>
+<VBox fillWidth="true" prefHeight="600" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.minhzvideos.Player" alignment="CENTER">
+   <children>
+      <MediaView fx:id="mediaView"  fitWidth="1000" fitHeight="600"/>
+      <ProgressBar fx:id="progressBar"  prefWidth="900" prefHeight="10"/>
+
+      <!--player controls-->
+      <HBox alignment="BASELINE_CENTER">
+         <children>
+
+         </children>
+      </HBox>
+
+   </children>
+</VBox>

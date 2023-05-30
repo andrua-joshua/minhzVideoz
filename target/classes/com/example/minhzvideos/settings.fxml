@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.shape.Line?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.minhzvideos.Settings"
+      prefHeight="490.0" prefWidth="690.0">
+    <children>
+        <Label fx:id="title_all" text="GENERAL SETTINGS" textAlignment="CENTER"
+               alignment="CENTER"
+                prefWidth="690" minWidth="690"/>
+        <HBox fx:id="main_content" spacing="10" prefWidth="690" prefHeight="450">
+            <children>
+                <VBox spacing="5" fx:id="Admin_credentials" minHeight="450" minWidth="250"
+                      prefHeight="450" prefWidth="250"
+                alignment="CENTER">
+                    <children>
+                        <Label fx:id="admin_access_title" text="Admin Access Credentials"/>
+                        <HBox spacing="5" fx:id="passCode" visible="true">
+                            <children>
+                                <Label fx:id="enterPasscode" text="PassCode: "/>
+                                <TextField fx:id="firstCode" minWidth="25" minHeight="25"
+                                prefWidth="25" prefHeight="25" onKeyTyped="#firstKeyTyped"/>
+                                <TextField fx:id="secondCode" minWidth="25" minHeight="25"
+                                           prefWidth="25" prefHeight="25" onKeyTyped="#secondKeyTyped"/>
+                                <TextField fx:id="thirdCode" minWidth="25" minHeight="25"
+                                           prefWidth="25" prefHeight="25" onKeyTyped="#thirdKeyTyped"/>
+                                <TextField fx:id="fourthCode" minWidth="25" minHeight="25"
+                                           prefWidth="25" prefHeight="25" onKeyTyped="#fourthKeyTyped"/>
+                                <TextField fx:id="fifthCode" minWidth="25" minHeight="25"
+                                      prefWidth="25" prefHeight="25"  onKeyTyped="#fifthKeyTyped"/>
+                            </children>
+                        </HBox>
+                        <VBox fx:id="entryChecks" alignment="CENTER">
+                            <children>
+                                <Label fx:id="wrong_passCode" visible="false" text="wrong passCode"/>
+                                <Label fx:id="access_granted" visible="false" text="ACCESS GRANTED"/>
+                                <Button fx:id="confirm_btn" visible="true" text="Confirm" onAction="#confirmCredentials"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+                <VBox spacing="5" fx:id="Admin_options" prefHeight="450"
+                      minHeight="450" prefWidth="440" minWidth="440"
+                        alignment="CENTER" visible="false">
+                    <children>
+                        <Label fx:id="saving_to_logs_title"
+                               text="Saving and Backup Options"/>
+                        <HBox fx:id="saveByAdmin" spacing="10" alignment="CENTER">
+                            <children>
+                                <Label fx:id="saveToLogsByAdmin"
+                                       text="Save To logs by Admin"/>
+                                <CheckBox fx:id="saveLogsByAdmin" onAction="#saveToLogsByAdmin"/>
+                            </children>
+                        </HBox>
+                        <HBox fx:id="backUpByAdmin" spacing="10" alignment="CENTER">
+                            <children>
+                                <Label fx:id="backUpByAdmins"
+                                       text="BackUp Load By Admin  "/>
+                                <CheckBox fx:id="backUpLogsByAdmin" onAction="#backUpLogsByAdmin"/>
+                            </children>
+                        </HBox>
+                        <Line strokeWidth="5"/>
+                        <Line strokeWidth="5"/>
+                        <Line strokeWidth="5"/>
+                        <Label fx:id="loadingOptions" text="Loading Options"/>
+
+                        <HBox fx:id="loadFromDisk" spacing="10"
+                            alignment="CENTER">
+                            <children>
+                                <Label fx:id="loadFromDiskLabel"
+                                       text="Load From Disk By Admin"/>
+                                <CheckBox fx:id="loadFromDiskByAdmin" onAction="#loadFromDiskByAdmin"/>
+                            </children>
+                        </HBox>
+                        <HBox fx:id="loadOnTop" spacing="10"
+                            alignment="CENTER">
+                            <children>
+                                <Label fx:id="loadOnTopLabel"
+                                       text="Load On Top By Admin     "/>
+                                <CheckBox fx:id="loadOnTopByAdmin" onAction="#loadOnTopByAdmin"/>
+                            </children>
+                        </HBox>
+                        <HBox fx:id="loadFromLogs" spacing="10"
+                            alignment="CENTER">
+                            <children>
+                                <Label fx:id="oadFromLogsLabel"
+                                       text="Load From Logs By Admin"/>
+                                <CheckBox fx:id="loadFromLogsByAdmin" onAction="#loadFromLogsByAdmin"/>
+                            </children>
+                        </HBox>
+
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+    </children>
+
+</VBox>

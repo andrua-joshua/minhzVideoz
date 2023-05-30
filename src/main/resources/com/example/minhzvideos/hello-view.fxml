@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.CheckBox?>
+<VBox fx:id="content" spacing="10" xmlns="http://javafx.com/javafx/19"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.minhzvideos.HelloController">
+   <MenuBar>
+     <menus>
+       <Menu mnemonicParsing="false" text="File">
+         <items>
+             <MenuItem mnemonicParsing="false" text="Settings" onAction="#startSettings"/>
+             <MenuItem mnemonicParsing="false" text="Save to logs" onAction="#saveToLogs"
+                       fx:id="saveToLogs"/>
+             <MenuItem mnemonicParsing="false" text="Turn autoSave on" onAction="#autoSaveTologs"
+                       fx:id="autoSaveId"/>
+             <MenuItem mnemonicParsing="false" text="Save to BackUp" onAction="#saveToBackup"
+                        fx:id="saveToBackUp"/>
+             <MenuItem mnemonicParsing="false" text="Roll back to BackUp" onAction="#rollBackToBackUp"/>
+             <MenuItem mnemonicParsing="false" text="Close" onAction="#closeApplication"/>
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Load">
+         <items>
+           <MenuItem fx:id="loadFromDisk_menuItm" mnemonicParsing="false" onAction="#LoadFromDisk" text="Load From Disk" />
+             <MenuItem fx:id="loadFromLogs_menuItm" mnemonicParsing="false" onAction="#LoadFromLog" text="Load From Current Logs" />
+             <MenuItem mnemonicParsing="false" onAction="#LoadOnTop" text="Load OnTop" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Help">
+         <items>
+           <MenuItem mnemonicParsing="false" text="About" />
+         </items>
+       </Menu>
+     </menus>
+   </MenuBar>
+
+
+    <!--Label fx:id="welcomeText"/>
+    <Button text="Hello!" onAction="#onHelloButtonClick"/-->
+    <VBox fx:id="tt" alignment="CENTER" fillWidth="true">
+        <Label fx:id="title" alignment="CENTER" text="MINHZ VIDEOZ" />
+    </VBox>
+
+    <HBox fillHeight="true" spacing="5">
+        <padding>
+            <Insets bottom="0" left="10.0" right="10.0" top="0.0" />
+        </padding>
+        <VBox fx:id="drives" fillWidth="true">
+            <Label fx:id="D_label" text="Drives" />
+            <ScrollPane>
+                <ListView fx:id="Drive_lists" />
+            </ScrollPane>
+        </VBox>
+        <VBox fx:id="files" minWidth="550">
+            <HBox alignment="CENTER" fx:id="selection" spacing="15">
+                <children>
+                    <CheckBox fx:id="Music" text="Music" onMouseClicked="#onMusicClicked"/>
+                    <CheckBox fx:id="Series" text="Series" onMouseClicked="#onSeriesClicked"/>
+                    <CheckBox fx:id="Movies" text="Movies" onMouseClicked="#onMoviesClicked" />
+                    <CheckBox fx:id="All" text="All" onMouseClicked="#onAllClicked" />
+                </children>
+            </HBox>
+            <ScrollPane fx:id="scrollFiles" fitToWidth="true">
+                <ListView fx:id="File_lists" onMouseClicked="#FileItemClicked" prefHeight="500" prefWidth="548.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></ListView>
+            </ScrollPane>
+        </VBox>
+        <VBox fx:id="search" fillWidth="true">
+            <TextField fx:id="searchTxt" text="Search movies" onKeyTyped="#sKeyTyped"/>
+            <ScrollPane>
+                <ListView fx:id="search_lists" />
+            </ScrollPane>
+        </VBox>
+    </HBox>
+
+</VBox>
